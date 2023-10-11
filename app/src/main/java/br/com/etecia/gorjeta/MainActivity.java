@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Spinner menu;
+    Gorjeta gorjeta = new Gorjeta();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
