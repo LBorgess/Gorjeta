@@ -28,7 +28,7 @@
         app:layout_constraintRight_toRightOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/outlined_edit_text"
+            android:id="@+id/txtValorConta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
@@ -51,6 +51,7 @@
         android:entries="@array/menu_valores" />
 
     <Button
+        android:id="@+id/btnCalcular"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -58,13 +59,15 @@
         android:text="Calcular" />
 
     <EditText
+        android:id="@+id/txtValorGorjeta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:editable="false"
-        android:hint="Valor da gorjata" />
+        android:hint="Valor da gorjeta" />
 
     <EditText
+        android:id="@+id/txtTotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
