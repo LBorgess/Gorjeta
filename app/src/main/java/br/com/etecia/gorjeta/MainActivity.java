@@ -24,14 +24,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // OBTÉM O ID DOS CAMPOS DE TEXTO
-
         txtValorConta = findViewById(R.id.txtValorConta);
         txtValorGorjeta = findViewById(R.id.txtValorGorjeta);
         txtTotal = findViewById(R.id.txtTotal);
+        double valorconta;
+        String total;
 
         // OBTEM O ID DO BOTÃO
-
         btnCalcular = findViewById(R.id.btnCalcular);
+
+        // CAPTURA O VALOR DA CONTA DIGITADO
+        valorconta = Double.parseDouble(txtValorConta.getText().toString());
 
         // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
 
