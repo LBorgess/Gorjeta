@@ -4,19 +4,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
 
+    EditText txtValorConta, txtValorGorjeta, txtTotal;
+    Button btnCalcular;
+
     Spinner menu;
+
     Gorjeta gorjeta = new Gorjeta();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // OBTÉM O ID DOS CAMPOS DE TEXTO
+
+        txtValorConta = findViewById(R.id.txtValorConta);
+        txtValorGorjeta = findViewById(R.id.txtValorGorjeta);
+        txtTotal = findViewById(R.id.txtTotal);
+
+        // OBTEM O ID DO BOTÃO
+
+        btnCalcular = findViewById(R.id.btnCalcular);
+
+        // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
 
         menu = (Spinner) findViewById(R.id.menu_valores);
 

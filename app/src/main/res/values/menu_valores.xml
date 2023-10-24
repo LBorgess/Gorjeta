@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="menu_valores">
+        <item></item>
         <item>Excelente - 10%</item>
         <item>Ótimo - 8%</item>
         <item>Bom - 5%</item>
