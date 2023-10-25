@@ -32,18 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
         // OBTEM O ID DO BOTÃO
         btnCalcular = findViewById(R.id.btnCalcular);
+
+        // AÇÃO DO BOTÃO PARA CALCULAR E EXIBIR OS VALORES
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 double valorconta;
-                if (txtValorGorjeta.getText() != null) {
+                if (txtTotal.getText() != null) {
                     valorconta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
                     txtTotal.setText(String.valueOf(valorconta));
                 }
             }
         });
-        // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
 
+        // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
         menu = (Spinner) findViewById(R.id.menu_valores);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
