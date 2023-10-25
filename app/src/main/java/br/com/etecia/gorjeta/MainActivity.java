@@ -3,6 +3,7 @@ package br.com.etecia.gorjeta;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,15 +28,20 @@ public class MainActivity extends AppCompatActivity {
         txtValorConta = findViewById(R.id.txtValorConta);
         txtValorGorjeta = findViewById(R.id.txtValorGorjeta);
         txtTotal = findViewById(R.id.txtTotal);
-        double valorconta;
         String total;
 
         // OBTEM O ID DO BOTÃO
         btnCalcular = findViewById(R.id.btnCalcular);
-
-        // CAPTURA O VALOR DA CONTA DIGITADO
-        valorconta = Double.parseDouble(txtValorConta.getText().toString());
-
+        btnCalcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double valorconta;
+                if (txtValorGorjeta.getText() != null) {
+                    valorconta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
+                    txtTotal.setText(String.valueOf(valorconta));
+                }
+            }
+        });
         // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
 
         menu = (Spinner) findViewById(R.id.menu_valores);
