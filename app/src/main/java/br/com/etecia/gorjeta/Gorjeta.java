@@ -1,26 +1,47 @@
 package br.com.etecia.gorjeta;
 
 public class Gorjeta {
-    double valorDaConta;
 
+    private double valorDaConta;
+
+    public double getValorDaConta() {
+        return valorDaConta;
+    }
+
+    public void setValorDaConta(double valorDaConta) {
+        this.valorDaConta = valorDaConta;
+    }
+
+    /**
+     * Retorna um valor de 10%
+     * @return
+     */
     public double excelente() {
-        double valorDaConta = this.valorDaConta;
-        return valorDaConta * 1.10;
+        return this.valorDaConta * 1.10;
     }
 
+    /**
+     * Retorna um valor de 8%
+     * @return
+     */
     public double otimo() {
-        double valorDaConta = this.valorDaConta;
-        return valorDaConta * 1.08;
+        return this.valorDaConta * 1.08;
     }
 
+    /**
+     * Retorna o valor de 5%
+     * @return
+     */
     public double bom() {
-        double valorDaConta = this.valorDaConta;
-        return valorDaConta * 1.05;
+        return this.valorDaConta * 1.05;
     }
 
+    /**
+     * Retorna o valor de 2%
+     * @return
+     */
     public double ruim() {
-        double valorDaConta = this.valorDaConta;
-        return valorDaConta * 1.02;
+        return this.valorDaConta * 1.02;
     }
 
 }
