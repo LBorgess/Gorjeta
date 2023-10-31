@@ -37,11 +37,21 @@ public class MainActivity extends AppCompatActivity {
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                double valorconta;
-                if (txtTotal.getText() != null) {
-                    valorconta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
-                    txtTotal.setText(String.valueOf(valorconta));
+                double valorGorjeta;
+                double valorConta;
+
+                if(txtValorConta.getText() != null){
+                    valorConta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
+                    valorGorjeta = gorjeta.excelente(valorConta);
+                    txtValorGorjeta.setText(String.valueOf(valorGorjeta));
                 }
+
+
+//                if (txtTotal.getText() != null) {
+//                    valorconta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
+//                    txtTotal.setText(String.valueOf(valorconta));
+//                }
+
             }
         });
 
