@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         txtValorConta = findViewById(R.id.txtValorConta);
         txtValorGorjeta = findViewById(R.id.txtValorGorjeta);
         txtTotal = findViewById(R.id.txtTotal);
-        String total;
+        menu = (Spinner) findViewById(R.id.menu_valores);
 
         // OBTEM O ID DO BOTÃO
         btnCalcular = findViewById(R.id.btnCalcular);
@@ -41,25 +41,45 @@ public class MainActivity extends AppCompatActivity {
                 double valorConta;
                 double totalConta;
 
-                if(txtValorConta.getText() != null){
+                String selecao = menu.getSelectedItem().toString();
+
+                if (txtValorConta.getText() != null) {
                     valorConta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
-                    valorGorjeta = gorjeta.excelente(valorConta) - valorConta;
-                    totalConta = valorConta + valorGorjeta;
-                    txtValorGorjeta.setText(String.valueOf(valorGorjeta));
-                    txtTotal.setText(String.valueOf(totalConta));
+
+                    if (selecao.equals("Excelente - 10%")) {
+                        valorGorjeta = gorjeta.excelente(valorConta);
+                        totalConta = valorConta + valorGorjeta;
+                        txtValorGorjeta.setText(String.valueOf(valorGorjeta));
+                        txtTotal.setText(String.valueOf(totalConta));
+                    }
+
+                    if (selecao.equals("Ótimo - 8%")) {
+                        valorGorjeta = gorjeta.otimo(valorConta);
+                        totalConta = valorConta + valorGorjeta;
+                        txtValorGorjeta.setText(String.valueOf(valorGorjeta));
+                        txtTotal.setText(String.valueOf(totalConta));
+                    }
+
+                    if (selecao.equals("Bom - 5%")) {
+                        valorGorjeta = gorjeta.bom(valorConta);
+                        totalConta = valorConta + valorGorjeta;
+                        txtValorGorjeta.setText(String.valueOf(valorGorjeta));
+                        txtTotal.setText(String.valueOf(totalConta));
+                    }
+
+                    if (selecao.equals("Ruim - 2%")) {
+                        valorGorjeta = gorjeta.ruim(valorConta);
+                        totalConta = valorConta + valorGorjeta;
+                        txtValorGorjeta.setText(String.valueOf(valorGorjeta));
+                        txtTotal.setText(String.valueOf(totalConta));
+                    }
+
                 }
-
-
-//                if (txtTotal.getText() != null) {
-//                    valorconta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
-//                    txtTotal.setText(String.valueOf(valorconta));
-//                }
 
             }
         });
 
         // MENU DE SELEÇÃO DA QUALIDADE DO SERVIÇO
-        menu = (Spinner) findViewById(R.id.menu_valores);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.menu_valores, android.R.layout.simple_spinner_item);
@@ -69,4 +89,13 @@ public class MainActivity extends AppCompatActivity {
         menu.setAdapter(adapter);
 
     }
+
+    public void selecionaGorjeta() {
+        String mySpinner = menu.getSelectedItem().toString();
+
+        if (mySpinner.equals("Excelente - 10%")) {
+
+        }
+    }
+
 }

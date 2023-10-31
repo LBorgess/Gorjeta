@@ -18,7 +18,7 @@ public class Gorjeta {
      * @return
      */
     public double excelente(double valor) {
-        return valor * 1.10;
+        return valor * .10;
     }
 
     /**
@@ -27,7 +27,7 @@ public class Gorjeta {
      * @return
      */
     public double otimo(double valor) {
-        return valor * 1.08;
+        return valor * .08;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Gorjeta {
      * @return
      */
     public double bom(double valor) {
-        return valor * 1.05;
+        return valor * .05;
     }
 
     /**
@@ -45,7 +45,7 @@ public class Gorjeta {
      * @return
      */
     public double ruim(double valor) {
-        return valor * 1.02;
+        return valor * .02;
     }
 
 }
