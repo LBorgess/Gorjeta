@@ -2,12 +2,15 @@ package br.com.etecia.gorjeta;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String selecao = menu.getSelectedItem().toString();
 
-                if (txtValorConta.getText() != null) {
+                if (!TextUtils.isEmpty(txtValorConta.getText())) {
                     valorConta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
 
                     if (selecao.equals("Excelente - 10%")) {
@@ -74,6 +77,13 @@ public class MainActivity extends AppCompatActivity {
                         txtTotal.setText(String.valueOf(totalConta));
                     }
 
+                } else {
+                    Context contexto = getApplicationContext();
+                    CharSequence aviso = "Insira um valor.";
+                    int duracao = Toast.LENGTH_SHORT;
+
+                    Toast toast = Toast.makeText(contexto, aviso, duracao);
+                    toast.show();
                 }
 
             }
