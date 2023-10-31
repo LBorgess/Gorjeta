@@ -39,11 +39,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 double valorGorjeta;
                 double valorConta;
+                double totalConta;
 
                 if(txtValorConta.getText() != null){
                     valorConta = Double.parseDouble(String.valueOf(txtValorConta.getText()));
-                    valorGorjeta = gorjeta.excelente(valorConta);
+                    valorGorjeta = gorjeta.excelente(valorConta) - valorConta;
+                    totalConta = valorConta + valorGorjeta;
                     txtValorGorjeta.setText(String.valueOf(valorGorjeta));
+                    txtTotal.setText(String.valueOf(totalConta));
                 }
 
 
