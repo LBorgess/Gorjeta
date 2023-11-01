@@ -9,3 +9,6 @@ As notas e a porcentagem a ser calculada do atendimento deveram ser:
 - Ótimo – 8%
 - Bom – 5%
 - Ruim – 2%
+
+---
+Desenvolvido junto com o [Ryan Lucio](https://github.com/RyanLucio)
